@@ -31,7 +31,7 @@ Setup instructions and details.
   > mvn test -Dtest=tests.GitHubScraperTest#scraperTest -Dnum_pages_to_scrape={number of pages}
   
   Example:
-  > mvn test -Dtest=tests.GitHubScraperTest#scraperTest -Dnum_pages_to_scrape=2
+  > mvn test -Dtest=tests.GitHubScraperTest#scraperTest -Dnum_pages_to_scrape=1
   
   Test2
   

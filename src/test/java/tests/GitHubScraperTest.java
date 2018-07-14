@@ -96,8 +96,7 @@ public class GitHubScraperTest extends Utils{
                 Assert.assertTrue("All URL's are valid",true);
             }catch(Exception e){
             logger.error("exception: ",e);
+            Assert.fail("Something happened");
         }
     }
-
-
 }

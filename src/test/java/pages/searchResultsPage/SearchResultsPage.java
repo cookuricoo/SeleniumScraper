@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class SearchResultsPage {
 
     RemoteWebDriver driver;
-//    public SearchPagePO uiObject = new SearchPagePO();
+
     public static Logger searchlogger = LoggerFactory.getLogger(SearchResultsPage.class);
     String pageLoadStatus = null;
 
@@ -32,7 +32,7 @@ public class SearchResultsPage {
 
     public String getTitle(WebElement repo) {
         String title = repo.findElement(By.className("col-8")).getText().split("\\n")[0];
-        searchlogger.info("Title :"+ title);
+        searchlogger.info("Title: "+ title);
         return title;
 
     }
@@ -40,15 +40,12 @@ public class SearchResultsPage {
     public String getDescription(WebElement repo) {
         try{
             String description = repo.findElement(By.className("col-9")).getText();
-            searchlogger.info("Description :"+description);
+            searchlogger.info("Description: "+description);
             return description;
         }catch(NoSuchElementException e){
             return "";
         }catch (StaleElementReferenceException r) {
-            driver.navigate().refresh();
-            String description =  repo.findElement(By.className("col-9")).getText();
-            searchlogger.info("Description :"+ description);
-            return description;
+            return "";
         }
 
     }
@@ -61,10 +58,7 @@ public class SearchResultsPage {
         }catch (NoSuchElementException e){
             return "";
         }catch (StaleElementReferenceException s){
-            driver.navigate().refresh();
-            String language =  repo.findElement(By.className("d-table-cell")).getText();
-            searchlogger.info("Language :"+language);
-            return language;
+            return "";
         }
     }
 
@@ -72,27 +66,31 @@ public class SearchResultsPage {
         try{
 
             String stars = repo.findElement(By.cssSelector("a[href*='stargazers']")).getText();
-            searchlogger.info("Stars :"+stars);
+            searchlogger.info("Stars: "+stars);
             return stars;
 
         }catch (NoSuchElementException e){
             return "";
-//        }catch (StaleElementReferenceException r) {
-//            return "";
+        }catch (StaleElementReferenceException r) {
+            return "";
         }
     }
 
     public String getTime(WebElement repo) {
-        String time = repo.findElement(By.className("d-flex")).findElement(By.tagName("relative-time")).getAttribute("title");
-        searchlogger.info("Time :"+time);
-        return time;
+        try {
+
+            String time = repo.findElement(By.className("d-flex")).findElement(By.tagName("relative-time")).getAttribute("title");
+            searchlogger.info("Time: " + time);
+            return time;
+        }catch (StaleElementReferenceException r) {
+            return "";}
 
     }
 
     public String[] getTags(WebElement repo) {
         try {
             String[] tags = repo.findElement(By.className("topics-row-container")).getText().split("\\n");
-            searchlogger.info("Tags :"+ Arrays.toString(tags));
+            searchlogger.info("Tags: "+ Arrays.toString(tags));
             return tags;
         }catch (NoSuchElementException e){
             return new String[]{""};
