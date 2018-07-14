@@ -16,7 +16,7 @@ Setup instructions and details.
 2.Download the test git repository:
 ***********************************
   
-  > git clone -b final https://github.com/cookuricoo/SeleniumScraper.git
+  > git clone https://github.com/cookuricoo/SeleniumScraper.git
   
 *********************  
 3. Running the tests:
