@@ -1,2 +1,2 @@
-# saleniumScraper
+# SeleniumScraper
 Github scraper tool
