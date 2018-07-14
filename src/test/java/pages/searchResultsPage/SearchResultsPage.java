@@ -12,10 +12,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
-/**
- * Created by stefansh on 18/07/11.
- */
 public class SearchResultsPage {
 
     RemoteWebDriver driver;

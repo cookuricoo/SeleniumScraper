@@ -8,13 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by stefansh on 18/07/11.
- */
 public class HomePage {
 
     RemoteWebDriver driver;
-//    public MainPagePO uiObject = new MainPagePO();
 
     @FindBy(className = "header-search-wrapper")
     public WebElement searchBox;

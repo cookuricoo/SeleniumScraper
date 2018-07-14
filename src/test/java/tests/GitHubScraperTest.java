@@ -14,13 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by stefansh on 18/07/09.
- */
 
 public class GitHubScraperTest extends Utils{
-
-//    public static SeleniumScraper scraper = new SeleniumScraper();
 
     List<Document> repoItems = new ArrayList<Document>();
     int pages = Integer.parseInt(System.getProperty("num_pages_to_scrape","5"));

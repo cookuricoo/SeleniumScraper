@@ -12,10 +12,6 @@ import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 
-/**
- * Created by stefansh on 18/07/11.
- */
-
 public class DriverManager {
 
 
@@ -45,8 +41,6 @@ public class DriverManager {
             driver = chrome.getWebDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//            PageFactory.initElements(driver, scraper.homePage.uiObject);
-//            PageFactory.initElements(driver, scraper.searchResultsPage.uiObject);
         }
 
 
